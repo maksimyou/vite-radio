@@ -1,0 +1,123 @@
+.main_content_audio_player_container {
+    max-width: calc(502px + 300 * ((100vw - 320px) / (1410 - 320)));
+    margin-left: 50px;
+    display: flex;
+    height: 200px;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 30px;
+    @media only screen and (max-width: 650px) {
+        margin-top: 80px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        margin-left: 0px;
+    }
+    /*border-bottom: 2px solid rgba(128, 128, 128, 0.23);
+    border-right: 2px solid rgba(128, 128, 128, 0.315);*/
+}
+.main_content_audio_player_discription {
+    width: 400px;
+    margin-left: 30px;
+    font-size: 20px;
+    font-weight: 500;
+}
+.main_content_audio_player_icon {
+    background-repeat: no-repeat;
+    background-size: cover;
+    /*background-color: #b2b2b2;*/
+    max-width: 150px;
+    max-height: 150px;
+    border-radius: 9px;
+    border: 1px solid rgb(0, 0, 0);
+    margin-right: 35px;
+    box-shadow: 1px 1px 20px 2px rgba(0, 0, 0, 0.609);
+    @media only screen and (max-width: 650px) {
+        margin-right: 0px;
+    }
+}
+.main_content_audio_player_icon img {
+    width: 130px;
+    height: 130px;
+}
+.main_content_audio_player_controls {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 1px 1px 20px 2px rgba(0, 0, 0, 0.569);
+    @media only screen and (max-width: 650px) {
+        margin: 30px 0;
+    }
+}
+.audio_player_play {
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 1px solid rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.audio_player_play:hover {
+    border: 1px solid rgba(0, 0, 0, 0.394);
+}
+.audio_player_play img {
+    padding-left: 3px;
+    width: 32px;
+}
+.audio_player_mute {
+    cursor: pointer;
+    margin: 0 10px;
+    width: 20px;
+    height: 20px;
+}
+
+/*generated with Input range slider CSS style generator (version 20211225)
+https://toughengineer.github.io/demo/slider-styler*/
+input[type="range"].styled-slider {
+    /*height: 2em;*/
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+
+/*progress support*/
+input[type="range"].styled-slider.slider-progress {
+    --range: calc(var(--max) - var(--min));
+    --ratio: calc((var(--value) - var(--min)) / var(--range));
+    --sx: calc(0.5 * 0.8em + var(--ratio) * (100% - 0.8em));
+    border-radius: 5px;
+}
+
+input[type="range"].styled-slider:focus {
+    outline: none;
+}
+
+/*webkit*/
+input[type="range"].styled-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 1em;
+    height: 1em;
+    border-radius: 1em;
+    background: blue;
+    /*border: 1px solid #D3D3D3;*/
+    box-shadow: 0 0 2px black;
+    margin-top: calc(max((0.4em - 1px - 1px) * 0.5, 0px) - max(0.8em * 0.5, 1px));
+}
+
+input[type="range"].styled-slider::-webkit-slider-runnable-track {
+    height: 0.4em;
+    /*border: 1px solid #b2b2b2;*/
+    border-radius: 5px;
+    background: rgba(83, 137, 176, 0.623);
+    box-shadow: none;
+}
+
+input[type="range"].styled-slider::-webkit-slider-thumb:hover {
+    background: rgb(65, 116, 211);
+}
+.audio_player {
+    display: none;
+}

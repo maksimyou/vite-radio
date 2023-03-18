@@ -1,0 +1,22 @@
+.footer_container {
+    padding-bottom: 65px;
+}
+.footer_content {
+    max-width: 1410px;
+    margin: 0 auto;
+    background-color: #add5f8d2;
+    box-shadow: 0px -5px 10px 2px rgb(180 165 165);
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 calc(10px + 40 * ((100vw - 320px) / (1410 - 320)));
+    height: 60px;
+}
+.footer_content_text_foot {
+    font-size: calc(14px + 5 * ((100vw - 320px) / (1410 - 320)));
+}
+.footer_content_rigth_foot {
+    text-align: right;
+    font-size: calc(14px + 5 * ((100vw - 320px) / (1410 - 320)));
+}

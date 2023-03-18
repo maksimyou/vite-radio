@@ -1,0 +1,17 @@
+.gallery_container {
+    max-width: 1410px;
+    margin: 0 auto;
+    height: 100vh;
+}
+.gallery_content {
+    background-color: #a3b8d65d;
+    width: 100%;
+    height: 100%;
+    border-left: 1px solid rgba(72, 67, 67, 0.229);
+    border-right: 1px solid rgba(72, 67, 67, 0.229);
+}
+
+.gallery_content h1 {
+    margin-left: 50px;
+    padding-top: 30px;
+}

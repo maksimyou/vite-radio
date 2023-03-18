@@ -1,34 +1,46 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import './App.scss'
+import Main from './Components/Main/Main'
+import Layout from './Components/Layout/Layout'
+import Gallery from './Components/Gallery/Gallery'
+import News from './Components/News/News'
+import Contacts from './Components/Contacts/Contacts'
 
+import axios from 'axios'
+import { Route, Routes } from 'react-router-dom'
+import { useEffect } from 'react'
 function App() {
-  const [count, setCount] = useState(0)
+  let [radioValue, setRadioValue] = useState(0)
+  let [radio, setRadio] = useState('')
+  let [audeioRad, setAudeioRad] = useState();
+  let [showImgMute, setShowImgMute] = useState(true);
+  let [showImgPlay, setShowImgPlay] = useState(true);
+  useEffect(() => {
+
+    axios.get('https://meta.fmgid.com/get_playing.php?station=vera&date=2023:3:16&time=12:26')
+      .then(function (response) {
+        setRadio(response.data[0].metadata)
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      })
+      .finally(function () {
+        // always executed
+      });
+
+  }, [])
+
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
+    <Routes >
+      <Route path='/' element={<Layout radioValue={radioValue} setRadioValue={setRadioValue} showImgPlay={showImgPlay} setShowImgPlay={setShowImgPlay} showImgMute={showImgMute} setShowImgMute={setShowImgMute} audeioRad={audeioRad} setAudeioRad={setAudeioRad} radio={radio} />}>
+        <Route index element={<Main radioValue={radioValue} setRadioValue={setRadioValue} showImgPlay={showImgPlay} setShowImgPlay={setShowImgPlay} showImgMute={showImgMute} setShowImgMute={setShowImgMute} audeioRad={audeioRad} setAudeioRad={setAudeioRad} radio={radio} />} />
+        <Route path='gallery' element={<Gallery />} />
+        <Route path='news' element={<News />} />
+        <Route path='contacts' element={<Contacts />} />
+      </Route>
+    </Routes>
   )
 }
 
