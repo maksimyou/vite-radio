@@ -1,0 +1,59 @@
+.schering_container {
+    width: 350px;
+    margin-left: 50px;
+    @media only screen and (max-width: 650px) {
+        padding-top: 40px;
+        width: 310px;
+        margin-left: 0px;
+        margin: 0 auto;
+    }
+}
+.schering_content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 10px;
+    background-color: rgba(214, 226, 237, 0.584);
+    box-shadow: 1px 1px 20px 2px rgba(0, 0, 0, 0.569);
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 5px;
+    @media only screen and (max-width: 650px) {
+        flex-wrap: wrap;
+    }
+}
+.schering_container_title {
+    padding-left: 15px;
+    padding-top: 15px;
+    margin-bottom: 10px;
+    font-size: 19px;
+    font-weight: 600;
+}
+.icon-shering a img {
+    display: inline-block;
+    margin: 3px;
+    width: 25px;
+    height: 25px;
+}
+.icon-shering a img:hover {
+    box-shadow: 1px 1px 10px 1px black;
+    border-radius: 5px;
+    padding: 3px;
+}
+.schering_content_vk {
+}
+.schering_content_twitter {
+}
+.schering_content_ok {
+}
+.schering_content_fb {
+}
+.schering_content_google {
+}
+.schering_content_my-world {
+}
+.schering_content_viber {
+}
+.schering_content_watsap {
+}
+.schering_content_telegram {
+}

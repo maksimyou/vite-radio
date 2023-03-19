@@ -7,11 +7,10 @@ import imgPause from './music-pause.svg'
 import imgMaxValume from './volume-max.svg'
 import imgMuteValume from './volume-mute.svg'
 
-function FixedRadio({ radio, setAudeioRad, audeioRad, radioValue, setRadioValue, showImgMute, setShowImgMute, showImgPlay, setShowImgPlay }) {
+function FixedRadio({ radio, setAudeioRad, audeioRad, radioValue, setRadioValue, showImgMute, setShowImgMute, showImgPlay, setShowImgPlay, radioLink }) {
     let [discript, setDiscript] = useState('');
     let [curentValue, setCurentValue] = useState(1);
     let audio = useRef();
-
 
     useEffect(() => {
         setDiscript(radio);
@@ -44,7 +43,7 @@ function FixedRadio({ radio, setAudeioRad, audeioRad, radioValue, setRadioValue,
                 <div class="fixpleer_controls_content_discription_wrap">
                     <div class="fixpleer_controls_content_discription">{discript}</div>
                 </div>
-                <audio ref={audio} class="audio_player" controls src="https://radiovera.hostingradio.ru:8007/radiovera_128"></audio>
+                <audio ref={audio} class="audio_player" controls src={radioLink}></audio>
             </div>
         </div>
     )

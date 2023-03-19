@@ -6,12 +6,26 @@ import imgPlay from './music-play.svg'
 import imgPause from './music-pause.svg'
 import imgMaxValume from './volume-max.svg'
 import imgMuteValume from './volume-mute.svg'
-function Player({ radio, audeioRad, showImgMute, setShowImgMute, showImgPlay, setShowImgPlay, radioValue, setRadioValue }) {
+function Player({ radio, audeioRad, showImgMute, setShowImgMute, showImgPlay, setShowImgPlay, radioValue, setRadioValue, setRadioLink }) {
     let [discript, setDiscript] = useState('');
     let [curentValue, setCurentValue] = useState(1);
     useEffect(() => {
         setDiscript(radio)
     }, [])
+
+    let station = [
+        { radioStation: 'https://radiovera.hostingradio.ru:8007/radiovera_128', title: 'Вера' },
+        { radioStation: 'https://proxy.radio.azbyka.ru/radonezh', title: 'Радонеж' },
+        { radioStation: 'https://grad-petrov.ru:8094/mp3', title: 'Град Петров' },
+        { radioStation: 'https://live.radioblago.ru/live-1.ogg', title: 'Радио Благо' },
+        { radioStation: 'https://ancientfaith.streamguys1.com/music', title: 'Ancient Faith. Music' },
+        { radioStation: 'https://ancientfaith.streamguys1.com/talk', title: 'Ancient Faith. Talk' },
+        { radioStation: ' https://proxy.radio.azbyka.ru/gkpc', title: 'Καλή σας ακρόαση' },
+    ]
+
+    function setRadioStation(id) {
+        setRadioLink(station[id])
+    }
 
     return (
         <div class="main_content_audio_player_container">
@@ -37,7 +51,21 @@ function Player({ radio, audeioRad, showImgMute, setShowImgMute, showImgPlay, se
                 }} class="styled-slider slider-progress" type="range" />
 
             </div>
-            <div class="main_content_audio_player_discription">{discript}</div>
+            {/*<div class="main_content_audio_player_discription">{discript}</div>*/}
+            <select class='main_content_audio_player_select' onInput={(e) => {
+                setRadioLink(station[e.target.value].radioStation);
+                setShowImgPlay(true)
+            }} name="" id="">
+                <option value="0">Вера</option>
+                <option value="1">Радонеж</option>
+                <option value="2">Град Петров</option>
+                <option value="3">Радио Благо</option>
+                <option value="4">Ancient Faith. Music</option>
+                <option value="5">Ancient Faith. Talk</option>
+                <option value="6">Καλή σας ακρόαση</option>
+
+
+            </select>
         </div >
     )
 }

@@ -21,6 +21,13 @@
     margin-left: 30px;
     font-size: 20px;
     font-weight: 500;
+    @media only screen and (max-width: 650px) {
+        width: 320px;
+        margin-left: 0px;
+        font-size: 19px;
+        font-weight: 600;
+        color: rgb(0, 0, 0);
+    }
 }
 .main_content_audio_player_icon {
     background-repeat: no-repeat;
@@ -120,4 +127,14 @@ input[type="range"].styled-slider::-webkit-slider-thumb:hover {
 }
 .audio_player {
     display: none;
+}
+
+.main_content_audio_player_select {
+    appearance: none;
+    border: none;
+    background: transparent;
+    outline: none;
+}
+.main_content_audio_player_select:optional {
+    background: transparent;
 }

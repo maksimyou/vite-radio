@@ -1,0 +1,19 @@
+.not-found_container {
+    max-width: 1410px;
+    height: 100vh;
+    margin: 0 auto;
+}
+.not-found_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.not-found_content_title {
+    margin: 40px 0;
+    text-align: center;
+    font-weight: 900;
+}
+.not-found_img {
+    max-width: calc(300px + 200 * ((100vw - 320px) / (1410 - 320)));
+}

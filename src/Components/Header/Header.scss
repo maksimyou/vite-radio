@@ -33,7 +33,7 @@
     display: flex;
     align-items: center;
     list-style-type: none;
-    font-size: 21px;
+    font-size: calc(17px + 5 * ((100vw - 320px) / (1410 - 320)));
     font-weight: 500;
 }
 .icon_arrow {
@@ -95,4 +95,15 @@
 }
 .header_content_authorization img {
     width: 20px;
+    transform: rotate(0deg);
+    transition: 0.8s;
+}
+
+.active {
+    color: blue;
+    font-weight: 600;
+}
+.active + img {
+    transform: rotate(90deg);
+    transition: 0.8s;
 }
